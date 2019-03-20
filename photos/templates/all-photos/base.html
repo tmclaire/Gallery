@@ -10,9 +10,15 @@
   {% else %}
     <title> Gallery Photos </title>
   {% endif %}
+  {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/basephotos.css' %}">
+  {% endblock %}
+
 
 </head>
 <body>
+        {% include "navbar.html" %}
     {% block content %} <h1>Photos for {{date|date:"l d-F Y"}}</h1> {%endblock%}
 
     {% block scripts %}

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import datetime as dt
+from .models import Location,Category,Image
 
 
 from django.shortcuts import render
