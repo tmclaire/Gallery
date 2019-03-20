@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-import datetime as dt
 from __future__ import unicode_literals
+import datetime as dt
+
 
 from django.shortcuts import render
 from django.http  import HttpResponse
