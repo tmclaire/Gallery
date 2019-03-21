@@ -64,8 +64,8 @@ class Image(models.Model):
     @classmethod
     def get_image(cls,id):
     
-      image=Image.objects.filter(id=id)
-      return image
+      photos=Image.objects.filter(id=id)
+      return photos
 
     @classmethod
     def get_category_images(cls,category):
