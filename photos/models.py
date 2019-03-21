@@ -68,15 +68,15 @@ class Image(models.Model):
       return image
 
     @classmethod
-    def get_category_images(cls,cat):
-      categori=Category.objects.filter(category=cat).first()
-      images=Image.objects.filter(category=categori)
+    def get_category_images(cls,category):
+      category=Category.objects.filter(category=category).first()
+      images=Image.objects.filter(category=category)
       return images
 
     @classmethod
-    def get_location_images(cls,loc):
-      locati=Location.objects.filter(pk=loc)
-      images=Image.objects.filter(location=locati)
+    def get_location_images(cls,location):
+      location=Location.objects.filter(pk=location)
+      images=Image.objects.filter(location=location)
       return images
 
     @classmethod
