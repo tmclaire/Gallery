@@ -17,7 +17,6 @@ def welcome(request):
 
 
 def photos_of_day(request):
-    
     date = dt.date.today()
     photos = Image.objects.all()
     return render(request, 'pictures/home.html', {"date": date,"photos":photos})

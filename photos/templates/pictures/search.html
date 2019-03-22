@@ -1,0 +1,39 @@
+{% extends 'pictures/base.html' %} 
+{% block content %}
+
+<div class="row">
+    
+    {% for photos_item in photos %} 
+    {% if photos %}
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 columns">
+        
+            <img src="{{photos_item.image.url}}" alt="Image" class="img-fluid">
+       
+    </div>
+     
+    {% endif %}
+    {% endfor %}
+</div>
+<div class="row">
+    {% if photos %}
+      <h2>Found {{ photos|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 images for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if photos %}
+    {% for photos_item in photos %}
+      <div class="col-sm-6 col-md-3">
+        <img src="{{photos_item.image.url}}" alt="Image" class="img-fluid">
+       
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
+
