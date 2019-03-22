@@ -1,0 +1,64 @@
+{%extends 'pictures/base.html'%} 
+{% block content %}
+{% for photos_item in photos %}
+
+<div class=" hello">
+ 
+  <div class="col-md-3 hh">
+    <a href="" data-toggle="modal" data-target="#{{photos_item.id}}"> <img src="{{photos_item.image.url}}" class="img-responsive responsive img-holder" alt="Image"  height="200" width="300" id="hey" ></a>
+  </div>
+
+
+<div id="{{photos_item.id}}" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+
+      <div class="modal-content">
+          <div class="modal-header">
+            <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+           
+            <img src="{{photos_item.image.url}}" alt="" id='myImg' height="600" width="680">
+          </div>
+          <div class="modal-body">
+           
+            <h4 class="modal-title text-center">{{photos_item.name}}</h4>
+            <p>{{photos_item.description}}</p>
+            <p> Taken at:{{photos_item.location.country}} {{photos_item.location.city}} {{photos_item.location.place}}</p>
+            <p>posted at {{photos_item.pub_date}}</p>
+            <input type="text" value="{{photos_item.image.url}}" id="myInput">
+
+            <!-- The button used to copy the text -->
+                   <button onclick="myFunction()">Share</button>
+          </div>
+        
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <script>
+      function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+      
+        /* Select the text field */
+        copyText.select();
+      
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+      
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+      };</script>
+
+{% empty %}
+<div class="row">
+  <h2 class="text-center">There No Image yet</h2>
+</div>
+{% endfor %}
+
+</div>
+
+
+{% endblock %}
