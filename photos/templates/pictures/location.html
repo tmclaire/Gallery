@@ -1,6 +1,7 @@
 {%extends 'pictures/base.html'%} 
 {% block content %}
 {% for photos_item in photos %}
+<link rel="stylesheet" href="{% static 'css/basephotos.css' %}">
 
 <div class=" hello">
  
@@ -16,7 +17,7 @@
           <div class="modal-header">
             <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
            
-            <img src="{{photos_item.image.url}}" alt="" id='myImg' height="600" width="680">
+            <img src="{{photos_item.image.url}}" alt="" id='myImg' height="400" width="400">
           </div>
           <div class="modal-body">
            
