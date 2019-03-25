@@ -23,4 +23,7 @@ Bootstrap
 
 Marie Claire TUYISENGE
 
+### License
+MIT License
+
 
