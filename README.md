@@ -10,3 +10,11 @@ Python3.6
 Postgres
 python virtualenv
 Install dependancies Install dependancies that will create an environment for the app to run pip3 install -r requirements.txt
+
+
+### Technologies used
+Python 3.6
+Django framework
+HTML
+CSS
+Bootstrap
