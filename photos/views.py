@@ -33,9 +33,14 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'pictures/search.html',{"message":message})
-def location(request,location):
-    images=Image.get_location_images(location=location)
-    return render(request, 'pictures/location.html',{"photos": images})
+def location(request,location_id):
+    try:
+        locations = Location.objects.all()
+        location = Location.objects.get(id = location_id)
+        images = Image.objects.filter(image_location = location.id)
+    except:
+        raise Http404()
+    return render(request, 'pictures/location.html',{"photos": images,'location':location,'locations':locations})
 
 def share(request,id):
     image=Image.share(id=id)
