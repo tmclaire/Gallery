@@ -22,9 +22,15 @@
           <div style="background-color:aqua; height:20px; width:20px;" class="modal-body">
            
             <h4 style="background-color:aqua; height:20px; width:20px;" class="modal-title text-center">{{photos_item.name}}</h4>
-            <p>{{photos_item.description}}</p>
-            <p> Taken at:{{photos_item.location.country}} {{photos_item.location.city}} {{photos_item.location.place}}</p>
-            <p>posted at {{photos_item.pub_date}}</p>
+            
+             <b>Description:</b> {{photos_item.description}}<br>
+             <b>image url:</b> {{image.image.url}}<br>
+             <b>Taken at:{{photos_item.location.country}}
+                {{photos_item.location.city}} 
+               {{photos_item.location.place}}
+               <br>
+             <b>image category:</b> {{photos_item.image_category}}
+             <p>posted at {{photos_item.pub_date}}</p>
             <input type="text" value="{{photos_item.image.url}}" id="myInput">
 
             <!-- The button used to copy the text -->
