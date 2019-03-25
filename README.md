@@ -18,3 +18,9 @@ Django framework
 HTML
 CSS
 Bootstrap
+
+### Authors
+
+Marie Claire TUYISENGE
+
+
